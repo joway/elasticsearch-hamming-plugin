@@ -1,0 +1,4 @@
+com/okjike/elastic/plugin/HammingDistanceNativeScriptPlugin$HammingNativeScriptFactory.class
+com/okjike/elastic/plugin/HammingDistanceNativeScriptPlugin.class
+com/okjike/elastic/plugin/HammingDistanceNativeScriptPlugin$HammingNativeScript.class
+com/okjike/elastic/plugin/hamming/HammingDistanceService.class
