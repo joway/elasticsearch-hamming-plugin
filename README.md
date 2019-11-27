@@ -1,4 +1,4 @@
-# elasticsearch-hamming-plugin
+# Elasticsearch Hamming Plugin
 
 ## Install
 
@@ -11,31 +11,31 @@ $ echo "script.inline: true" >> /etc/elasticsearch/elasticsearch.yml && echo "sc
 
 ## Usage
 
-POST `/{index_name}/_search` :
+**POST** `/{index_name}/_search` :
 
-    ```json
-    {
+
+```json
+{
+  "query": {
+    "function_score": {
       "query": {
-        "function_score": {
-          "query": {
-            "match_all": {}
-          },
-          "functions": [
-            {
-              "script_score": {
-                "script": {
-                  "inline": "hamming_distance_native",
-                  "lang": "native",
-                  "params": {
-                    "hash": "3dd3c609f30cd16c",
-                    "field": "phash"
-                  }
-                }
+        "match_all": {}
+      },
+      "functions": [
+        {
+          "script_score": {
+            "script": {
+              "inline": "hamming_distance_native",
+              "lang": "native",
+              "params": {
+                "hash": "3dd3c609f30cd16c",
+                "field": "phash"
               }
             }
-          ]
+          }
         }
-      }
+      ]
     }
-    ```
-
+  }
+}
+```
